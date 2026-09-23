@@ -1,0 +1,404 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+@layer base {
+  html {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  body {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    min-height: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: auto;
+  }
+  #root, .app-wrapper, main {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+@keyframes radar-pulse {
+  0% {
+    r: 6px;
+    opacity: 0.85;
+  }
+  100% {
+    r: 28px;
+    opacity: 0;
+  }
+}
+@keyframes optimal-dash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+.animate-radar-pulse {
+  animation: radar-pulse 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  transform-origin: 320px 320px;
+}
+.animate-optimal-dash {
+  stroke-dasharray: 8 6;
+  animation: optimal-dash 12s linear infinite;
+}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-tint":"#48654f","on-error":"#ffffff","surface-container":"#e5f1e5","surface-bright":"#f1fdf1","inverse-primary":"#aecfb4","tertiary-fixed":"#adf3b8","tertiary-container":"#003d19","on-secondary-fixed":"#2a1800","on-surface":"#141e17","primary":"#072413","on-error-container":"#93000a","surface-container-low":"#ebf7eb","secondary-container":"#ffb54b","on-primary-container":"#85a48b","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#0a5226","surface-container-highest":"#dae6da","on-secondary":"#ffffff","secondary":"#835400","background":"#f1fdf1","error-container":"#ffdad6","on-tertiary-container":"#69ab76","primary-fixed":"#caebcf","outline":"#727972","secondary-fixed":"#ffddb5","primary-fixed-dim":"#aecfb4","on-primary-fixed":"#042110","on-background":"#141e17","surface":"#f1fdf1","tertiary-fixed-dim":"#92d69d","primary-container":"#1e3a27","inverse-on-surface":"#e8f4e8","outline-variant":"#c2c8c0","on-secondary-fixed-variant":"#643f00","error":"#ba1a1a","on-tertiary":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#ffb957","on-tertiary-fixed":"#00210b","inverse-surface":"#28332b","on-secondary-container":"#714800","on-surface-variant":"#424842","on-primary-fixed-variant":"#314d39","surface-dim":"#d1ddd2","surface-variant":"#dae6da","tertiary":"#00250d","surface-container-high":"#dfebe0"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","gutter":"1.5rem","space-xl":"2.5rem","margin":"3rem","gutter-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Newsreader"],"label-sm":["Plus Jakarta Sans"],"metric-display":["Plus Jakarta Sans"],"metric-compact":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-xl":["Plus Jakarta Sans"],"headline-lg":["Newsreader"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Newsreader"],"headline-md":["Newsreader"],"body-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Newsreader"],"headline-sm":["Newsreader"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"700"}],"metric-display":["36px",{"lineHeight":"40px","letterSpacing":"-0.03em","fontWeight":"700"}],"metric-compact":["20px",{"lineHeight":"24px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"500"}]}}};</script>
+</head>
+<body class="bg-[#111713] text-[#F5F4EF] font-body-md antialiased selection:bg-[#E5AA3E]/30 selection:text-white">
+<main class="w-full bg-[#111713]">
+<div class="flex flex-col w-full">
+<!-- SECTION A: COMMAND RADAR & EDITORIAL HERO (STRICT 100VH) -->
+<div class="min-h-screen h-auto md:h-screen md:max-h-screen w-full relative flex flex-col justify-between box-border overflow-x-hidden md:overflow-hidden px-8 sm:px-12 lg:px-16 pt-6 pb-8 text-[#F5F4EF] selection:bg-[#E5AA3E]/30 selection:text-white" id="hero" style="background: linear-gradient(135deg, rgb(17, 23, 19) 0%, rgb(22, 26, 20) 50%, rgb(26, 20, 16) 100%);">
+<!-- Warm Amber Spotlight Top-Right -->
+<div class="pointer-events-none absolute inset-0 z-0" style="background: radial-gradient(circle at 80% 25%, rgba(227, 157, 52, 0.15) 0%, rgba(217, 155, 53, 0.05) 45%, transparent 70%);"></div>
+<!-- Top: Navigation Bar (flex-shrink-0) -->
+<header class="relative z-30 w-full max-w-7xl mx-auto flex items-center justify-between flex-shrink-0">
+<!-- Left: Krishiq Wordmark -->
+<a class="flex items-center gap-3 group" href="/">
+<div class="w-7 h-7 rounded-md bg-[#1E3A27] border border-[#E5AA3E]/30 flex items-center justify-center shadow-xs">
+<svg class="w-4 h-4 fill-none stroke-[#E5AA3E]" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C12 2 5 6 3 13C2 19 9 22 12 23C15 22 22 19 21 13C19 6 12 2 12 2Z" fill="#111713"></path>
+<path d="M12 5V21"></path>
+<path d="M12 9L16 6"></path>
+<path d="M12 13L8 10"></path>
+<path d="M12 16L16 13"></path>
+</svg>
+</div>
+<span class="font-['Newsreader'] font-serif text-[24px] font-medium tracking-tight text-[#F5F4EF] group-hover:text-white transition-colors">Krishiq</span>
+</a>
+<!-- Center: Minimal Nav Links -->
+<nav class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-[#9EABA2] font-semibold">
+<a class="hover:text-[#F5F4EF] transition-colors" href="#features">Mandi Engine</a>
+<a class="hover:text-[#F5F4EF] transition-colors" href="#features">Pooling</a>
+<a class="hover:text-[#F5F4EF] transition-colors" href="#reality-audit">Economics</a>
+<a class="hover:text-[#F5F4EF] transition-colors" href="#field-faq">Field FAQ</a>
+</nav>
+<!-- Right: Sleek Pill CTA Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center gap-1.5 font-label-md text-label-md text-[#F5F4EF] bg-[#F5F4EF]/5 hover:bg-[#F5F4EF]/10 border border-[#F5F4EF]/25 hover:border-[#E5AA3E]/60 px-5 py-2 rounded-full transition-all duration-200" href="#reality-audit">
+<span class="">Launch App</span>
+<span class="text-[#E5AA3E]">→</span>
+</a>
+</div>
+</header>
+<!-- Middle: Central Stage Area (flex-1 min-h-0) with Enlarged Radar -->
+<div class="relative z-20 w-full max-w-7xl mx-auto flex-1 flex items-center justify-between my-auto min-h-0">
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Headline -->
+<div class="lg:col-span-5 z-20 max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2E6F40]/20 border border-[#2E6F40]/40 text-[#adf3b8] text-[11px] font-mono uppercase tracking-wider mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-[#adf3b8]"></span> Vidarbha Operational Hub Active
+</div>
+<h1 class="font-['Newsreader'] font-serif text-[#F5F4EF] tracking-[-0.03em] select-none text-left" style="font-size: clamp(2.4rem, 4.2vw, 3.8rem); line-height: 1.04;">
+<span class="block font-light">Every harvest,</span>
+<span class="block font-light whitespace-nowrap">one price</span>
+<span class="block font-light whitespace-nowrap text-[#E5AA3E]">you command</span>
+</h1>
+<p class="mt-4 text-[#9EABA2] font-body-md text-sm leading-relaxed max-w-md">
+Deterministic gross-to-net mandi execution for smallholders. Direct pooled logistics and zero middleman leakage across a 300km radius.
+</p>
+</div>
+<!-- Right Spatial Route Matrix Radar (Enlarged by ~35%) -->
+<div class="lg:col-span-7 relative flex items-center justify-center lg:justify-end">
+<div class="w-full max-w-[620px] flex items-center justify-center lg:justify-end pointer-events-none md:pointer-events-auto">
+<svg class="w-full h-auto select-none max-h-[58vh] object-contain" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="240%" id="origin-glow-lg" width="240%" x="-70%" y="-70%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="8"></feGaussianBlur>
+<feMerge>
+<feMergeNode></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+<linearGradient id="optimal-gradient" x1="320" x2="620" y1="320" y2="110">
+<stop offset="0%" stop-color="#E5AA3E"></stop>
+<stop offset="100%" stop-color="#F2C167"></stop>
+</linearGradient>
+</defs>
+<!-- Radar Range Concentric Rings -->
+<circle cx="320" cy="320" r="70" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 5" stroke-width="1"></circle>
+<circle cx="320" cy="320" r="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"></circle>
+<circle cx="320" cy="320" r="240" stroke="rgba(255,255,255,0.045)" stroke-dasharray="4 6" stroke-width="1"></circle>
+<circle cx="320" cy="320" r="330" stroke="rgba(255,255,255,0.035)" stroke-width="1"></circle>
+<!-- Crosshairs -->
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="2 4" stroke-width="1" x1="40" x2="740" y1="320" y2="320"></line>
+<line stroke="rgba(255,255,255,0.06)" stroke-dasharray="2 4" stroke-width="1" x1="320" x2="320" y1="20" y2="580"></line>
+<!-- Connecting Secondary Routes -->
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="320" x2="160" y1="320" y2="150"></line>
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="320" x2="90" y1="320" y2="280"></line>
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="320" x2="570" y1="320" y2="490"></line>
+<path d="M320,320 C260,240 210,190 160,150" stroke="rgba(158, 171, 162, 0.35)" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<path d="M320,320 C230,312 160,300 90,280" stroke="rgba(158, 171, 162, 0.35)" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<path d="M320,320 C410,390 490,445 570,490" stroke="rgba(158, 171, 162, 0.35)" stroke-dasharray="4 4" stroke-width="1.4"></path>
+<!-- Amravati -->
+<circle cx="160" cy="150" fill="#111713" r="6" stroke="rgba(158, 171, 162, 0.6)" stroke-width="1.5"></circle>
+<circle cx="160" cy="150" fill="rgba(158, 171, 162, 0.8)" r="2.5"></circle>
+<text fill="#9EABA2" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" letter-spacing="0.1em" x="116" y="130">AMRAVATI</text>
+<!-- Akola -->
+<circle cx="90" cy="280" fill="#111713" r="6" stroke="rgba(158, 171, 162, 0.6)" stroke-width="1.5"></circle>
+<circle cx="90" cy="280" fill="rgba(158, 171, 162, 0.8)" r="2.5"></circle>
+<text fill="#9EABA2" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" letter-spacing="0.1em" x="54" y="260">AKOLA</text>
+<!-- Chandrapur -->
+<circle cx="570" cy="490" fill="#111713" r="6" stroke="rgba(158, 171, 162, 0.6)" stroke-width="1.5"></circle>
+<circle cx="570" cy="490" fill="rgba(158, 171, 162, 0.8)" r="2.5"></circle>
+<text fill="#9EABA2" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" letter-spacing="0.1em" x="582" y="496">CHANDRAPUR</text>
+<!-- Primary Glowing Optimal Route to Nagpur -->
+<path d="M320,320 C420,245 515,175 620,110" stroke="rgba(229, 170, 62, 0.3)" stroke-width="7"></path>
+<path class="animate-optimal-dash" d="M320,320 C420,245 515,175 620,110" fill="none" stroke="url(#optimal-gradient)" stroke-linecap="round" stroke-width="3"></path>
+<!-- Nagpur Destination Tag -->
+<circle cx="620" cy="110" fill="none" r="16" stroke="rgba(229, 170, 62, 0.35)" stroke-width="1.5"></circle>
+<circle cx="620" cy="110" fill="#161a14" r="8" stroke="#E5AA3E" stroke-width="2.5"></circle>
+<circle cx="620" cy="110" fill="#E5AA3E" r="3.5"></circle>
+<g transform="translate(630, 94)">
+<rect fill="#1E3A27" height="24" opacity="0.95" rx="5" stroke="#E5AA3E" stroke-opacity="0.6" stroke-width="1.2" width="124" x="0" y="0"></rect>
+<text fill="#F5F4EF" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="0.08em" x="9" y="16">NAGPUR</text>
+<text fill="#E5AA3E" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" letter-spacing="0.06em" x="65" y="16">[OPTIMAL]</text>
+</g>
+<!-- Origin Center Hub -->
+<circle class="animate-radar-pulse" cx="320" cy="320" fill="none" r="8" stroke="#E5AA3E" stroke-width="2"></circle>
+<circle cx="320" cy="320" fill="#111713" r="12" stroke="rgba(229, 170, 62, 0.8)" stroke-width="2"></circle>
+<circle cx="320" cy="320" fill="#E5AA3E" filter="url(#origin-glow-lg)" r="5.5"></circle>
+<g transform="translate(200, 350)">
+<text fill="#F5F4EF" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.12em" x="0" y="0">ORIGIN · WARDHA HUB</text>
+<text fill="#E5AA3E" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" letter-spacing="0.08em" opacity="0.9" x="0" y="16">20.7453° N, 78.6022° E</text>
+</g>
+<!-- Distance markers -->
+<text fill="rgba(158, 171, 162, 0.45)" font-family="'JetBrains Mono', monospace" font-size="8.5" x="475" y="316">100 KM</text>
+<text fill="rgba(158, 171, 162, 0.45)" font-family="'JetBrains Mono', monospace" font-size="8.5" x="575" y="316">200 KM</text>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Scroll Indicator Left + Subtle Micro-Copy Right (flex-shrink-0) -->
+<div class="relative z-30 w-full max-w-7xl mx-auto flex items-end justify-between pt-2 pb-2 flex-shrink-0">
+<!-- Left: Circular Scroll Indicator Button -->
+<a aria-label="Scroll to System Mechanics" class="group flex items-center gap-3 text-[#9EABA2] hover:text-[#F5F4EF] transition-colors scroll-smooth cursor-pointer" href="#features" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+<div class="w-10 h-10 rounded-full border border-[#F5F4EF]/20 group-hover:border-[#E5AA3E] flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px] text-[#F5F4EF]/70 group-hover:text-[#E5AA3E] group-hover:translate-y-0.5 transition-all">south</span>
+</div>
+<span class="hidden sm:inline font-['Plus_Jakarta_Sans'] text-[11px] uppercase tracking-widest text-[#9EABA2]">Explore Mechanics</span>
+</a>
+<!-- Right: Understated 2-Line Subtext -->
+<div class="text-right max-w-[300px]"><p class="font-['Plus_Jakarta_Sans'] text-xs leading-relaxed text-[#9EABA2] font-normal">Know your real Mandi price before you sell. Share a truck with neighboring farmers, cut travel costs, and keep every rupee you earn.</p></div>
+</div>
+</div>
+<!-- SECTION B: SYSTEM MECHANICS (STRICT 100VH ASYMMETRICAL BENTO GRID IN OBSIDIAN THEME) -->
+<section class="min-h-screen h-auto w-full relative flex flex-col justify-between px-8 sm:px-12 lg:px-16 py-8 md:py-6 box-border overflow-x-hidden bg-[#111713] text-[#F5F4EF] border-t border-white/10" id="features" style="background: radial-gradient(circle at 20% 20%, rgba(30, 58, 39, 0.35) 0%, rgb(17, 23, 19) 60%);">
+<!-- Section Compact Header -->
+<div class="w-full max-w-7xl mx-auto flex items-end justify-between flex-shrink-0 pt-2 pb-3 border-b border-white/10">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-[#E5AA3E]"></span>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.25em] text-[#E5AA3E] font-bold">SYSTEM MECHANICS</span>
+</div>
+<h2 class="font-['Newsreader'] font-serif text-2xl md:text-3xl text-[#F5F4EF] tracking-tight leading-tight">
+Engineered for smallholder margin sovereignty
+</h2>
+</div>
+<p class="hidden md:block text-right max-w-md text-xs text-[#9EABA2] leading-relaxed">
+Replacing opaque commission circles with strict ledger transparency. Every rupee accounted for before grain leaves the village boundary.
+</p>
+</div>
+<!-- Bento Grid Structure (Strict fit for 100vh) -->
+<div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 my-6">
+<!-- CARD 1: Wide Top-Left (7 Cols) - Net Realisation Breakdown -->
+<div class="md:col-span-7 bg-[#162019] p-5 rounded-2xl border border-white/15 shadow-2xl flex flex-col justify-between backdrop-blur-md"><div class="flex flex-col justify-between h-full"><div class="flex items-center justify-between pb-2.5 mb-3 border-b border-white/10"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#adf3b8]"></span><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#adf3b8] font-bold">NET REALISATION FORMULA</span></div><span class="px-2.5 py-0.5 rounded-full bg-[#2E6F40]/30 text-[#adf3b8] border border-[#2E6F40]/60 text-[11px] font-bold tabular-nums">94.2% Retained Cash</span></div><div class="mb-4"><h3 class="font-['Newsreader'] font-serif text-2xl text-[#F5F4EF] font-normal leading-snug mb-1">No Hidden Cuts. Full Take-Home Cash.</h3><p class="text-xs text-[#9EABA2] leading-relaxed max-w-lg">Middlemen hide their profit in weight loss and extra charges. We show you the exact cash that lands in your bank after freight and Mandi fees.</p></div><div class="bg-[#0d1510] p-4 rounded-xl border border-white/10 mb-4"><div class="flex items-center justify-between mb-2"><span class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal">Transparent APMC Breakdown</span><span class="text-[10px] font-mono text-[#adf3b8] uppercase tracking-wider bg-[#2E6F40]/30 px-2 py-0.5 rounded border border-[#2E6F40]/50">Audit Grade</span></div><p class="text-xs text-[#9EABA2] leading-relaxed">Direct mill dispatch eliminates local agent commissions, arbitrary tare weight subtractions, and unvouched yard handling cess.</p></div><div class="flex items-center justify-between p-3 rounded-xl bg-[#2E6F40]/20 border border-[#2E6F40]/50"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#adf3b8] text-[20px]">verified</span><span class="font-['Plus_Jakarta_Sans'] font-bold text-sm text-[#adf3b8]">+₹477 / qtl extra pocketed</span></div><span class="text-[11px] font-mono text-[#F5F4EF]/80">vs local middleman offer (₹3,950/q)</span></div></div></div>
+<!-- CARD 2: Hero Accent Block (5 Cols) - Rich Warm Ochre Vehicle Pooling Meter -->
+<div class="md:col-span-5 bg-[#D99B35] text-[#141E17] p-5 rounded-2xl border border-[#F2C167]/40 shadow-2xl flex flex-col justify-between"><div class="flex flex-col justify-between h-full"><div><div class="flex items-center justify-between pb-2 mb-2.5 border-b border-black/15"><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider font-bold text-[#141E17]">COLLECTIVE LOGISTICS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-[#141E17] text-[#D99B35] font-bold font-mono">100/100 qtl LOCKED</span></div><h3 class="font-['Newsreader'] font-serif text-2xl font-normal leading-snug mb-1 text-[#141E17]">Fill One Big Truck Together</h3><p class="text-xs text-[#141E17]/85 mb-4 font-medium">Hiring an auto or small tempo alone costs ₹240/quintal. When 3-4 farmers fill a 10-tonne truck together, freight drops to ₹65/quintal.</p><div class="bg-black/10 p-3.5 rounded-xl backdrop-blur-xs mb-4 border border-black/10"><div class="flex justify-between items-center text-[#141E17] font-bold text-xs mb-1.5"><span class="">Vehicle Capacity Status</span><span class="font-mono">100 / 100 qtl Full</span></div><div class="w-full bg-black/20 h-3 rounded-full overflow-hidden"><div class="bg-[#141E17] h-full rounded-full" style="width: 100%;"></div></div><div class="flex justify-between text-[10px] text-[#141E17]/70 font-mono mt-1.5"><span class="">Wardha Hub Dispatch Ready</span><span class="">16-Wheeler Haul</span></div></div><div class="grid grid-cols-2 gap-2 p-2.5 rounded-lg bg-black/10 border border-black/10 text-center mb-4"><div><span class="text-[10px] text-[#141E17]/70 font-mono block uppercase">Solo Freight</span><span class="text-sm font-bold font-mono text-[#141E17] line-through">₹240 / qtl</span></div><div><span class="text-[10px] text-[#141E17] font-mono block uppercase font-bold">Pooled Freight</span><span class="text-base font-bold font-mono text-[#141E17]">₹65 / qtl <span class="text-[10px] text-[#141E17] font-bold">(-73%)</span></span></div></div></div><div class="p-2.5 bg-[#141E17] text-[#F5F4EF] rounded-lg flex items-start gap-2 shadow-sm"><span class="material-symbols-outlined text-[#D99B35] text-[18px] shrink-0">lock_open</span><div class="text-[11px]"><span class="font-mono uppercase tracking-wide text-[#E5AA3E] font-bold block">Institutional Buyer Matched</span><span class="text-[#EDEDE8] leading-tight block">Verified Regional Processing Mill — Premium ₹4,820/q rate unlocked.</span></div></div></div></div>
+<!-- CARD 3: Spatial Mandi Intelligence (4 Cols) -->
+<div class="md:col-span-4 bg-[#162019] p-6 rounded-2xl border border-white/10 shadow-xl flex flex-col justify-between backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10">
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#E5AA3E] font-bold">SPATIAL ARBITRAGE</span>
+<span class="material-symbols-outlined text-[16px] text-[#9EABA2]">explore</span>
+</div>
+<h4 class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal mb-1">
+Live Friction Modeling
+</h4>
+<div class="space-y-2 mt-2">
+<div class="p-2.5 rounded-lg bg-[#0d1510] border border-[#2E6F40]/50">
+<div class="flex items-center justify-between text-xs">
+<span class="text-[#F5F4EF] font-semibold flex items-center gap-1.5">
+Nagpur Mandi <span class="text-[10px] text-[#adf3b8] font-mono font-bold">• OPTIMAL</span>
+</span>
+<span class="font-mono font-bold text-[#adf3b8] tabular-nums">₹4,480/q Net</span>
+</div>
+<div class="flex justify-between text-[10px] text-[#9EABA2] mt-1 font-mono">
+<span class="">Dist: 14km</span>
+<span class="">Freight: ₹45/q</span>
+<span class="">Gross: ₹4,650/q</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#111713] border border-white/5 opacity-80">
+<div class="flex items-center justify-between text-xs">
+<span class="text-[#9EABA2] flex items-center gap-1.5">
+Akola Mandi <span class="text-[10px] text-red-400 font-mono font-bold">• FALSE RATE</span>
+</span>
+<span class="font-mono text-red-400 font-bold tabular-nums">₹4,310/q Net</span>
+</div>
+<div class="flex justify-between text-[10px] text-[#9EABA2] mt-1 font-mono">
+<span class="">Dist: 245km</span>
+<span class="">Freight: ₹320/q</span>
+<span class="">Gross: ₹4,780/q</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-2 pt-2 border-t border-white/10 text-[11px] text-[#9EABA2]">
+<span class="text-red-400 font-semibold">• Trap:</span> Akola is +₹130 gross, yields <span class="text-[#F5F4EF] font-bold">₹170/q less net</span> after diesel.
+</div>
+</div>
+<!-- CARD 4: Temporal Engine (5 Cols) -->
+<div class="md:col-span-4 bg-[#162019] p-6 rounded-2xl border border-white/10 shadow-xl flex flex-col justify-between backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10">
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#9EABA2] font-semibold">TEMPORAL ENGINE</span>
+<span class="px-2 py-0.5 rounded bg-[#2E6F40]/20 text-[#adf3b8] text-[10px] font-mono font-bold">WDRA STORAGE</span>
+</div>
+<div class="flex justify-between items-baseline mb-2">
+<h4 class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal">
+Sell Today vs Store &amp; Pledge
+</h4>
+<span class="text-[11px] text-[#E5AA3E] font-mono font-bold">+3.5% Est. Recovery</span>
+</div>
+<!-- Mini Graph Mockup -->
+<div class="bg-[#0d1510] p-2.5 rounded-lg border border-white/10 mb-2">
+<div class="w-full h-10 relative">
+<svg class="w-full h-full text-[#E5AA3E]" fill="none" preserveAspectRatio="none" viewBox="0 0 240 50">
+<path d="M0,42 Q60,40 120,25 T240,8" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M0,42 Q60,40 120,25 T240,8 L240,50 L0,50 Z" fill="currentColor" fill-opacity="0.12"></path>
+<circle class="fill-[#E5AA3E]" cx="240" cy="8" r="3.5"></circle>
+<circle class="fill-[#9EABA2]" cx="0" cy="42" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex justify-between text-[9px] text-[#9EABA2] font-mono mt-0.5">
+<span class="">Day 0 (Harvest Glut)</span>
+<span class="">Day 12 (Target Window)</span>
+</div>
+</div>
+</div>
+<div class="text-[11px] text-[#9EABA2] bg-[#111713]/60 p-2 rounded border border-white/5">
+<span class="text-[#adf3b8] font-bold">Actionable:</span> Hold 12 days for <strong>+₹165/q net gain</strong> after ₹1.20/q/day rent and pledge interest.
+</div>
+</div>
+<!-- CARD 5: Accent Metric Statement (3 Cols) -->
+<div class="md:col-span-4 bg-[#1E3A27] text-[#F5F4EF] p-6 rounded-2xl border border-[#2E6F40]/60 shadow-xl flex flex-col justify-between">
+<div>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#E5AA3E] font-bold block mb-1">
+PILOT DISCOVERY
+</span>
+<span class="font-['Newsreader'] font-serif text-base text-[#EDEDE8] block font-normal leading-snug">
+Realized Take-Home Delta
+</span>
+</div>
+<div class="py-2">
+<span class="font-['Newsreader'] font-serif text-4xl leading-none text-[#E5AA3E] font-bold block tabular-nums">
++₹430
+</span>
+<span class="text-[11px] text-[#adf3b8] font-mono mt-1 block">
+per quintal net cash expansion
+</span>
+</div>
+<p class="text-[10px] text-[#9EABA2] border-t border-white/10 pt-2 leading-relaxed">Empirically modeled against Wardha, Seloo, &amp; Deoli APMC market data.</p>
+</div>
+</div>
+</section>
+<!-- SECTION C: FIELD REALITY AUDIT (100VH VIEWPORT) -->
+<section class="h-auto py-16 w-full relative flex flex-col justify-between px-8 sm:px-12 lg:px-16 box-border bg-[#111713] text-[#F5F4EF] border-t border-white/10" id="reality-audit" style="background: radial-gradient(circle at 80% 80%, rgba(22, 32, 25, 0.6) 0%, #111713 70%);">
+<!-- Header Strip -->
+<div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between flex-shrink-0 pt-2 pb-3 border-b border-white/10">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-[#E5AA3E]"></span>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.25em] text-[#E5AA3E] font-bold">FIELD REALITY AUDIT</span>
+</div>
+<h2 class="font-['Newsreader'] font-serif text-2xl md:text-3xl text-[#F5F4EF] tracking-tight leading-tight">
+Standard 20-Quintal Soybean Lot Ledger Comparison
+</h2>
+</div>
+<div class="mt-2 md:mt-0 inline-flex p-1 rounded-full bg-[#162019] border border-white/15" id="lot-selector">
+<button class="px-3.5 py-1 rounded-full bg-[#E5AA3E] text-[#141E17] text-[11px] font-bold shadow-xs">20 Quintal (2 Acre)</button>
+<button class="px-3.5 py-1 rounded-full text-[#9EABA2] hover:text-[#F5F4EF] text-[11px] font-semibold transition-colors">50 Quintal (5 Acre)</button>
+</div>
+</div>
+<!-- 3-Column Scenario Grid (Flex-1) -->
+<div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 py-8 items-stretch">
+<!-- Scenario A -->
+<div class="bg-[#162019] p-6 sm:p-8 rounded-2xl border border-white/15 flex flex-col justify-between shadow-lg backdrop-blur-md"><div><div class="flex items-center justify-between pb-2 border-b border-white/10 mb-3"><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#9EABA2] font-bold">SCENARIO A</span><span class="px-2 py-0.5 rounded bg-white/5 text-[#9EABA2] text-[10px] font-mono">Farmgate Sale</span></div><h3 class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal mb-1">Local Village Middleman (Slow loss of ₹8,000+ per trolley)</h3><p class="text-xs text-[#9EABA2] mb-4">Convenient pick-up that masks heavy physical weight write-downs.</p><div class="space-y-2 text-xs font-mono"><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Quoted Rate</span><span class="text-[#F5F4EF]">₹4,250/q</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Nominal Lot (20q)</span><span class="text-[#F5F4EF]">₹85,000</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-red-400"><span class="">Weight Cut (~4%)</span><span class="">-₹3,400</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-red-400"><span class="">Cash Batta Cut</span><span class="">-₹1,200</span></div></div></div><div class="mt-6 pt-6 border-t border-white/10"><span class="text-[10px] font-mono uppercase tracking-wider text-[#9EABA2] block mb-1">Net Farmer Take-Home</span><span class="font-['Newsreader'] font-serif text-3xl text-[#F5F4EF] font-bold tabular-nums block">₹80,400</span><span class="text-[11px] text-red-400 block mt-1 font-mono">Hidden fee: ~₹4,600 leaked</span></div></div>
+<!-- Scenario B -->
+<div class="bg-[#162019] p-6 sm:p-8 rounded-2xl border border-white/15 flex flex-col justify-between shadow-lg backdrop-blur-md"><div><div class="flex items-center justify-between pb-2 border-b border-white/10 mb-3"><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#9EABA2] font-bold">SCENARIO B</span><span class="px-2 py-0.5 rounded bg-white/5 text-[#9EABA2] text-[10px] font-mono">Solo Mini-Truck</span></div><h3 class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal mb-1">Going Alone to Mandi (High individual tempo freight)</h3><p class="text-xs text-[#9EABA2] mb-4">Farmer hires private 1.5t truck. Fixed transport eats auction gain.</p><div class="space-y-2 text-xs font-mono"><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Mandi Auction</span><span class="text-[#F5F4EF]">₹4,700/q</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Gross Auction Value</span><span class="text-[#F5F4EF]">₹94,000</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-red-400"><span class="">Private Truck Hire</span><span class="">-₹3,200</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-red-400"><span class="">Cess &amp; Hamali</span><span class="">-₹2,400</span></div></div></div><div class="mt-6 pt-6 border-t border-white/10"><span class="text-[10px] font-mono uppercase tracking-wider text-[#9EABA2] block mb-1">Net Farmer Take-Home</span><span class="font-['Newsreader'] font-serif text-3xl text-[#F5F4EF] font-bold tabular-nums block">₹88,400</span><span class="text-[11px] text-[#9EABA2] block mt-1 font-mono">High logistic drag per quintal</span></div></div>
+<!-- Scenario C (Winner Hero) -->
+<div class="bg-[#1A2A1E] p-6 sm:p-8 rounded-2xl border-2 border-[#2E6F40] flex flex-col justify-between shadow-2xl relative"><div class="absolute -top-3 right-6 bg-[#2E6F40] text-[#adf3b8] border border-[#adf3b8]/40 px-3.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider shadow-md">RECOMMENDED · MAXIMUM SOVEREIGNTY</div><div><div class="flex items-center justify-between pb-2 border-b border-[#2E6F40]/40 mb-3"><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider text-[#adf3b8] font-bold">SCENARIO C</span><span class="px-2.5 py-0.5 rounded bg-[#2E6F40]/30 text-[#adf3b8] text-[10px] font-mono font-bold">Krishiq Protocol</span></div><h3 class="font-['Newsreader'] font-serif text-lg text-[#F5F4EF] font-normal mb-1">Krishiq Pooled Sale (Direct to factory / Highest cash in hand)</h3><p class="text-xs text-[#9EABA2] mb-4">Aggregated 100-quintal haul directly to verified mill. Zero broker halting loss.</p><div class="space-y-2 text-xs font-mono"><div class="flex justify-between py-1.5 border-b border-white/5 text-[#EDEDE8]"><span class="">Direct Mill Rate</span><span class="text-[#adf3b8] font-bold">₹4,820/q</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-[#EDEDE8]"><span class="">Direct Gross (20q)</span><span class="text-[#adf3b8] font-bold">₹96,400</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Pooled Freight (₹65/q)</span><span class="">-₹1,300</span></div><div class="flex justify-between py-1.5 border-b border-white/5 text-[#9EABA2]"><span class="">Mandi QA &amp; Handling</span><span class="">-₹1,500</span></div></div></div><div class="mt-6 pt-6 border-t border-[#2E6F40]/60"><span class="text-[10px] font-mono uppercase tracking-wider text-[#adf3b8] font-bold block mb-1">Net Farmer Take-Home</span><div class="flex items-baseline justify-between"><span class="font-['Newsreader'] font-serif text-3xl text-[#E5AA3E] font-bold tabular-nums">₹93,600</span><span class="px-2.5 py-0.5 rounded bg-[#2E6F40]/40 text-[#adf3b8] text-xs font-mono font-bold tabular-nums border border-[#2E6F40]/60">+₹13,200</span></div><span class="text-xs text-[#adf3b8] block mt-1.5 font-medium">Verified Direct Escrow Settlement</span></div></div>
+</div>
+<!-- Summary Footer Strip -->
+<div class="w-full max-w-7xl mx-auto p-4 rounded-xl bg-[#162019] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 flex-shrink-0">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#2E6F40]/30 text-[#adf3b8] border border-[#2E6F40]/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+<p class="text-xs text-[#EDEDE8]">
+<strong class="text-[#E5AA3E]">+₹8,600 to +₹13,200 additional take-home cash per harvest</strong> — fully covers seed &amp; DAP fertilizer for subsequent Rabi wheat sowing.
+</p>
+</div>
+<a class="whitespace-nowrap px-4 py-2 rounded-full bg-[#E5AA3E] text-[#141E17] font-semibold text-xs hover:bg-[#F2C167] transition-colors shrink-0" href="#field-faq">
+Explore Field FAQ →
+</a>
+</div>
+</section>
+<!-- SECTION D & E: FIELD QUESTIONS + FINAL COMMAND CTA (100VH VIEWPORT) -->
+<section class="min-h-screen h-auto w-full relative flex flex-col justify-between px-8 sm:px-12 lg:px-16 box-border overflow-x-hidden bg-[#111713] text-[#F5F4EF] border-t border-white/10 py-12 gap-8" id="field-faq" style="background: radial-gradient(circle at 50% 10%, rgba(30, 58, 39, 0.4) 0%, rgb(17, 23, 19) 65%);">
+<div class="w-full max-w-7xl mx-auto flex-1 flex flex-col justify-between min-h-0">
+<!-- Upper Half: Pragmatic Field FAQ in 2x2 Grid -->
+<div>
+<div class="flex items-center justify-between pb-2 mb-3 border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#E5AA3E]"></span>
+<span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.25em] text-[#E5AA3E] font-bold">FIELD QUESTIONS &amp; DISPATCH RAILS</span>
+</div>
+<span class="text-[11px] text-[#9EABA2] font-mono">Offline-ready SMS &amp; UPI Escrow</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3"><!-- Q1 --><div class="p-4 rounded-xl bg-[#162019] border border-white/10"><h4 class="text-sm text-[#F5F4EF] font-semibold mb-1 flex items-start gap-2"><span class="text-[#E5AA3E] font-mono text-xs mt-0.5 shrink-0">01.</span><span class="">How do we share a truck if our farms are in different places?</span></h4><p class="text-xs text-[#9EABA2] leading-relaxed pl-5">The truck arrives at your village cluster. Bags are weighed, tagged, and recorded on the spot at village pickup before loading together. You only pay for your own lot's proportional freight.</p></div><!-- Q2 --><div class="p-4 rounded-xl bg-[#162019] border border-white/10"><h4 class="text-sm text-[#F5F4EF] font-semibold mb-1 flex items-start gap-2"><span class="text-[#E5AA3E] font-mono text-xs mt-0.5 shrink-0">02.</span><span class="">What if internet or mobile network is weak in the village?</span></h4><p class="text-xs text-[#9EABA2] leading-relaxed pl-5">Works smoothly on low-bandwidth 2G mobile data with offline caching. Mandi benchmarks and pooling manifests cache locally and sync immediately upon reconnection.</p></div><!-- Q3 --><div class="p-4 rounded-xl bg-[#162019] border border-white/10"><h4 class="text-sm text-[#F5F4EF] font-semibold mb-1 flex items-start gap-2"><span class="text-[#E5AA3E] font-mono text-xs mt-0.5 shrink-0">03.</span><span class="">When and how do I get my money?</span></h4><p class="text-xs text-[#9EABA2] leading-relaxed pl-5">Your payment is guaranteed. The buyer deposits the money before the truck leaves. As soon as quality is checked at the gate, cash is sent straight to your bank account within 4 hours.</p></div><!-- Q4 --><div class="p-4 rounded-xl bg-[#162019] border border-white/10"><h4 class="text-sm text-[#F5F4EF] font-semibold mb-1 flex items-start gap-2"><span class="text-[#E5AA3E] font-mono text-xs mt-0.5 shrink-0">04.</span><span class="">Are these prices real or just estimates?</span></h4><p class="text-xs text-[#9EABA2] leading-relaxed pl-5">Every price comes directly from official government Mandi registers and real mill contracts updated daily. No guesswork, no false promises.</p></div></div>
+</div>
+<!-- Lower Half: Sovereign Agrarian CTA Card -->
+<div class="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#162019] via-[#1A281E] to-[#162019] border border-[#2E6F40]/50 shadow-2xl relative overflow-hidden flex flex-col items-center text-center mt-8"><span class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-widest text-[#E5AA3E] font-bold mb-1.5">SIMPLE. FAIR. HONEST.</span><h2 class="font-['Newsreader'] font-serif text-2xl md:text-3xl text-[#F5F4EF] max-w-2xl font-normal tracking-tight leading-snug mb-2">Keep all your hard-earned harvest money.</h2><p class="text-xs md:text-sm text-[#9EABA2] max-w-xl font-normal leading-relaxed mb-4">Check today's best mandi price in your taluka and find a truck pool near your village in under 2 minutes.</p><div class="flex flex-wrap items-center justify-center gap-3"><a class="inline-flex items-center gap-2 text-xs font-semibold bg-[#E5AA3E] text-[#141E17] px-6 py-2.5 rounded-full hover:bg-[#F2C167] transition-all shadow-md" href="#hero"><span class="">Check My Crop Price →</span></a><a class="inline-flex items-center gap-2 text-xs font-semibold text-[#F5F4EF] border border-white/20 hover:border-[#E5AA3E]/60 bg-white/5 px-5 py-2.5 rounded-full transition-colors" href="#reality-audit"><span class="material-symbols-outlined text-[16px] text-[#E5AA3E]">local_shipping</span><span class="">View Active Vidarbha Pools</span></a></div><div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-[10px] font-mono text-[#9EABA2]"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#adf3b8]"></span> Agmarknet Sync Active</span><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#adf3b8]"></span> WDRA Certified Warehouses</span><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#adf3b8]"></span> Zero Registration Fees</span></div></div>
+</div>
+<!-- Compact Bottom Footer Strip -->
+<footer class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between pt-3 mt-3 border-t border-white/10 text-[11px] text-[#9EABA2] font-mono flex-shrink-0">
+<div class="">Krishiq Agritech Systems · Vidarbha Operational Zone</div>
+<div class="flex items-center gap-4 mt-1 sm:mt-0">
+<a class="hover:text-[#F5F4EF] transition-colors" href="#hero">Terminal Registry</a>
+<a class="hover:text-[#F5F4EF] transition-colors" href="#features">Mandi Ledger</a>
+<a class="hover:text-[#F5F4EF] transition-colors" href="#reality-audit">Economics</a>
+<span class="">© 2026 Krishiq</span>
+</div>
+</footer>
+</section>
+</div>
+</main>
+
+
+</body></html>

@@ -1,0 +1,1 @@
+export default function BottomSheet({children}:{children:React.ReactNode}){return <div className="card mt-4 rounded-b-none border-b-0 p-5"><div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-slate-200"/>{children}</div>}

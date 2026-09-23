@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg:#f7f8f2; --ink:#263b1a; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button, input, select { font:inherit; }
+.card { @apply rounded-3xl bg-white shadow-soft border border-black/5; }
+.page { @apply mx-auto w-full max-w-3xl px-4 pb-28 pt-16; }
+.primary { @apply rounded-2xl bg-krishiq-600 px-5 py-3.5 font-bold text-white active:scale-[.98] transition; }
+.secondary { @apply rounded-2xl bg-krishiq-50 px-5 py-3.5 font-bold text-krishiq-700 border border-krishiq-200; }
+
+/* Landing radar animations */
+@keyframes radar-pulse {
+  0% { r: 6px; opacity: 0.85; }
+  100% { r: 28px; opacity: 0; }
+}
+@keyframes optimal-dash {
+  to { stroke-dashoffset: -120; }
+}
+.animate-radar-pulse { animation: radar-pulse 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite; transform-origin: 320px 320px; }
+.animate-optimal-dash { stroke-dasharray: 8 6; animation: optimal-dash 12s linear infinite; }
+
+/* Leaflet Container overrides */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  z-index: 10;
+}
