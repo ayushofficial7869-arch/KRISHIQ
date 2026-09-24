@@ -1,6 +1,8 @@
+// The CSS file is loaded by Next.js at runtime; TypeScript may not have a
+// declaration for side-effect CSS imports in this project configuration.
+// @ts-expect-error -- Next.js handles this stylesheet import.
 import "./globals.css";
-import Nav from "../components/Nav";
-import LanguageSelector from "../components/LanguageSelector";
+import ConditionalChrome from "../components/ConditionalChrome";
 import { LanguageProvider } from "../lib/LanguageContext";
 
 export const metadata = { title:"Krishiq", description:"Smart crop selling and pooling platform" };
@@ -12,7 +14,6 @@ export default function RootLayout({children}:{children:React.ReactNode}) {
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   </head><body><LanguageProvider>
-    <div className="fixed right-4 top-4 z-50"><LanguageSelector /></div>
-    {children}<Nav/>
+    <ConditionalChrome>{children}</ConditionalChrome>
   </LanguageProvider></body></html>;
 }
