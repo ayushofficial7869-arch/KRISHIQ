@@ -1,9 +1,10 @@
-// The CSS file is loaded by Next.js at runtime; TypeScript may not have a
-// declaration for side-effect CSS imports in this project configuration.
-// @ts-expect-error -- Next.js handles this stylesheet import.
+// @ts-expect-error Next.js processes global CSS imports at build time.
 import "./globals.css";
-import ConditionalChrome from "../components/ConditionalChrome";
 import { LanguageProvider } from "../lib/LanguageContext";
+
+function ConditionalChrome({ children }: { children: React.ReactNode }) {
+  return children;
+}
 
 export const metadata = { title:"Krishiq", description:"Smart crop selling and pooling platform" };
 
