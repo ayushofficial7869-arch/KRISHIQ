@@ -1,7 +1,4 @@
-// The stylesheet is resolved by Next.js at runtime; TypeScript may not have a
-// declaration for side-effect CSS imports in some editor configurations.
-// @ts-expect-error CSS side-effect import
-import "./globals.css";
+import "./globals.css"; 
 import ConditionalChrome from "../components/ConditionalChrome";
 import { LanguageProvider } from "../lib/LanguageContext";
 
